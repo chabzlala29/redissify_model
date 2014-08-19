@@ -1,6 +1,6 @@
 # RedissifyModel
 
-TODO: Write a gem description
+It acts as a cache key value store for Sequel Models.
 
 ## Installation
 
@@ -24,9 +24,9 @@ Or install it yourself as:
 
 Create a file named `redissify_model.rb` somewhere on autoload paths and add this line to configure your project name:
 
-    ```ruby
-    Redissify::Config.project_name = "your_project_name"
-    ```
+```ruby
+Redissify::Config.project_name = "your_project_name"
+```
     
 ### Model
 Unfortunately it only supports Sequel Ruby ORM. I will update it soon to support ActiveRecord too.
