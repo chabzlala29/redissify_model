@@ -20,8 +20,9 @@ module RedissifyModel
       redis_query = JSON.parse(RedissifyModel::REDIS.get redis_key)
 
       if redis_query
-        p_id = redis_query["id"]
-        redis_query.delete "id" # Need to delete key id to prevent throwing a restricted primary key assignment on Sequel Model
+        p_key = self.primary_key.to_s
+        p_id = redis_query[p_key]
+        redis_query.delete p_key # Need to delete key id to prevent throwing a restricted primary key assignment on Sequel Model
         wallet_ins = self.new(redis_query)
         wallet_ins.id = p_id
         wallet_ins
