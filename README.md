@@ -31,16 +31,17 @@ Create a file named `redissify_model.rb` somewhere on autoload paths and add thi
 ### Model
 Unfortunately it only supports Sequel Ruby ORM. I will update it soon to support ActiveRecord too.
 
-    ```ruby
-    Class TestModel < Sequel::Model
-      include Redissify
-    end
-    ```
+```ruby
+Class TestModel < Sequel::Model
+  include Redissify
+end
+```
+
 Get the Model instance quickly with Redis query
-    ```ruby
-    TestModel.get_redis_ins(id)
-    => #<TestModel @values={:id=>1, :name=>"test", :age=>13}
-    ```
+```ruby
+TestModel.get_redis_ins(id)
+=> #<TestModel @values={:id=>1, :name=>"test", :age=>13}
+```
 
 ## Contributing
 
