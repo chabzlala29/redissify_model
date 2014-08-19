@@ -17,9 +17,10 @@ module RedissifyModel
   module ClassMethods
     def get_redis_ins(id)
       redis_key = "#{self.redis_model}:#{id}"
-      redis_query = JSON.parse(RedissifyModel::REDIS.get redis_key)
+      redis_query = RedissifyModel::REDIS.get(redis_key)
 
       if redis_query
+        redis_query = JSON.parse(redis_query)
         p_key = self.primary_key.to_s
         p_id = redis_query[p_key]
         redis_query.delete p_key # Need to delete key id to prevent throwing a restricted primary key assignment on Sequel Model

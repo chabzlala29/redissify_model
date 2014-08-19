@@ -38,9 +38,16 @@ describe RedissifyModel do
       expect(Test.get_redis_ins(test)).to be_nil
     end
 
+    it "should return record instance even if key is deleted" do
+      test2 = Test.create name: "test_name2", price: 42
+      redis_key = test2.redis_model_key_val
+      RedissifyModel::REDIS.del redis_key
+      expect(Test.get_redis_ins(test2.id)).to eq(test2)
+    end
+
     it "should add key if record created" do
-      test2 = Test.create name: "test_name2", price: 45
-      expect(Test.get_redis_ins(test2.id)).not_to be_nil
+      test3 = Test.create name: "test_name3", price: 45
+      expect(Test.get_redis_ins(test3.id)).not_to be_nil
     end
   end
 end
