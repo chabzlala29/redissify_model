@@ -1,6 +1,6 @@
 # RedissifyModel
 
-TODO: Write a gem description
+It acts as a cache key value store for Sequel Models.
 
 ## Installation
 
@@ -20,7 +20,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Configuring
+
+Create a file named `redissify_model.rb` somewhere on autoload paths and add this line to configure your project name:
+
+```ruby
+Redissify::Config.project_name = "your_project_name"
+```
+    
+### Model
+Unfortunately it only supports Sequel Ruby ORM. I will update it soon to support ActiveRecord too.
+
+```ruby
+Class TestModel < Sequel::Model
+  include Redissify
+end
+```
+
+Get the Model instance quickly with Redis query
+```ruby
+TestModel.get_redis_ins(id)
+=> #<TestModel @values={:id=>1, :name=>"test", :age=>13}
+```
 
 ## Contributing
 
