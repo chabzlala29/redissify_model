@@ -44,7 +44,7 @@ Redissify::Config.project_name = "your_project_name"
 ```
     
 ### Model
-Unfortunately it only supports Sequel Ruby ORM. I will update it soon to support ActiveRecord too.
+Unfortunately it only supports Sequel Ruby ORM. I will update it soon to support ActiveRecord too. When included it will automatically set Redis key val on the server when record is saved.
 
 ```ruby
 Class TestModel < Sequel::Model
