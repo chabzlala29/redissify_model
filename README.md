@@ -1,5 +1,24 @@
 # RedissifyModel
 
+# TODO: Your gem name
+
+[![Gem Version][GV img]][Gem Version]
+[![Build Status][BS img]][Build Status]
+[![Dependency Status][DS img]][Dependency Status]
+[![Code Climate][CC img]][Code Climate]
+[![Coverage Status][CS img]][Coverage Status]
+
+## Description
+
+[Gem Version]: https://rubygems.org/gems/redissify_model
+[Build Status]: https://travis-ci.org/chabzlala29/redissify_model
+[travis pull requests]: https://travis-ci.org/chabzlala29/redissify_model/pull_requests
+[Code Climate]: https://codeclimate.com/github/chabzlala29/redissify_model
+
+[GV img]: https://badge.fury.io/rb/redissify_model.png
+[BS img]: https://travis-ci.org/chabzlala29/redissify_model.png
+[CC img]: https://codeclimate.com/github/chabzlala29/redissify_model.png
+
 It acts as a cache key value store for Sequel Models.
 
 ## Installation
