@@ -1,7 +1,5 @@
 # RedissifyModel
 
-# TODO: Your gem name
-
 [![Gem Version][GV img]][Gem Version]
 [![Build Status][BS img]][Build Status]
 [![Code Climate][CC img]][Code Climate]
