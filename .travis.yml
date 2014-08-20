@@ -1,13 +1,7 @@
 language: ruby
-cache: bundler
-
 rvm:
-  - 2.1.2
-
-script: 'bundle exec rake'
-
-notifications:
-  recipients:
-    - cpobre.peg@gmail.com
-    on_failure: change
-    on_success: never
+  - 1.9.2
+  - 1.9.3
+  - 2.0.0
+script:
+  - bundle exec rspec spec
